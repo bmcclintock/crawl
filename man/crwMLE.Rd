@@ -4,11 +4,26 @@
 \alias{crwMLE}
 \title{Fit Continuous-Time Correlated Random Walk Models to Animal Telemetry Data}
 \usage{
-crwMLE(mov.model = ~1, err.model = NULL, activity = NULL, drift = FALSE,
-  data, coord = c("x", "y"), Time.name = "time", time.scale = "hours",
-  theta, fixPar, method = "Nelder-Mead", control = NULL,
-  constr = list(lower = -Inf, upper = Inf), prior = NULL,
-  need.hess = TRUE, initialSANN = list(maxit = 200), attempts = 1, ...)
+crwMLE(
+  mov.model = ~1,
+  err.model = NULL,
+  activity = NULL,
+  drift = FALSE,
+  data,
+  coord = c("x", "y"),
+  Time.name = "time",
+  time.scale = "hours",
+  theta,
+  fixPar,
+  method = "Nelder-Mead",
+  control = NULL,
+  constr = list(lower = -Inf, upper = Inf),
+  prior = NULL,
+  need.hess = TRUE,
+  initialSANN = list(maxit = 200),
+  attempts = 1,
+  ...
+)
 }
 \arguments{
 \item{mov.model}{formula object specifying the time indexed covariates for
@@ -150,7 +165,7 @@ exp(eta), where eta is the linear predictor based on the covariates. The
 error. If only one location error model is given, it is used for both
 coordinates (parameter values as well). If \code{drift.model} is set to
 \code{TRUE}, then, 2 additional parameters are estimated for the drift
-process, a drift variance and a beta multiplier.
+process, a drift variance and a beta multiplier. 
 
 \code{theta} and \code{fixPar} are vectors with the appropriate number or
 parameters. \code{theta} contains only those paraemters which are to be
